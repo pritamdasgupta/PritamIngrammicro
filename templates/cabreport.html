@@ -1,0 +1,565 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CAB SERVICE</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"%}>
+        <!-- Bootstrap 3.3.7 -->
+        <link rel="stylesheet" href={%  static "bower_components/bootstrap/dist/css/bootstrap.min.css"%}>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href={%  static "bower_components/font-awesome/css/font-awesome.min.css"%}>
+        <!-- Ionicons -->
+        <link rel="stylesheet" href={%  static "bower_components/Ionicons/css/ionicons.min.css"%}>
+        <!-- daterange picker -->
+        <link rel="stylesheet" href={%  static "bower_components/bootstrap-daterangepicker/daterangepicker.css"%}>
+        <!-- bootstrap datepicker -->
+        <link rel="stylesheet" href={%  static "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"%}>
+        <!-- DataTables -->
+        <link rel="stylesheet" href={%  static "bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"%}>
+        <!-- Theme style -->
+        <link rel="stylesheet" href={%  static "dist/css/AdminLTE.min.css"%}>
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href={%  static "dist/css/skins/_all-skins.min.css"%}>
+
+        <script src={%  static "http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"%}></script> <!-- jQuery source -->
+      
+        <!-- Google Font -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+      </head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini">IM</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Ingram</b>Micro</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Notifications Menu -->
+          <li class="dropdown notifications-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+            </a>
+            
+          </li>
+          <!-- Tasks Menu -->
+          
+          </li>
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">Cab User</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Cab User - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+            
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Cab User</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+ <!-- Main content -->
+   <section>
+       <div class="box-body">
+              <div class="row">
+
+				<div class="col-md-2">
+                  <div class="form-group">
+                    <label>Office Location</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option Selected="selected">All</option>
+                      <option>Durgapur</option>
+                      <option>Kolkata</option>
+                      <option>Pune</option>
+                      
+                    </select>
+                  </div>
+                
+                </div>
+
+
+                <!-- Date -->
+                <div class="col-md-2">
+                    <div class="form-group">
+                      <label> Start Date</label>
+        
+                      <div class="input-group">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control pull-right" id="datepicker_startdate">
+                      </div>
+                      <!-- /.input group -->
+                    </div>
+                   </div>   
+
+                   <div class="col-md-2">
+                      <div class="form-group">
+                        <label> End Date</label>
+          
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input type="text" class="form-control pull-right" id="datepicker_enddate">
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                     </div>                  
+
+                  <div class="col-md-2">
+                  <div class="form-group">
+                    <label>Service Type</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">All</option>
+                       <option>Free</option>
+                      <option>Paid</option>
+                      <option>Paid share</option>
+                     </select>
+                  </div>
+                  </div>
+
+
+
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label>Driver</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option Selected="selected">Choose Driver</option>
+                      <option>Udai pal</option>
+                      <option>santu roy</option>
+                      <option>sujit das</option>
+                      
+                    </select>
+                  </div>
+                
+                </div>
+                <!-- /.col -->
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label></label>
+                <td>
+                    <button type="button" class="btn btn-block btn-primary">Show</button></td>
+                  </div>
+                </div>
+
+                
+              </div>
+            </div>
+
+
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Request ID</th>
+                  <th >Name</th>
+                  <th>Employee ID</th>
+                  <th>Service Type</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Driver</th>
+                  <th>Fare</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>100000</td>
+                  <td>Makhan Lal</td>
+                  <td>203000</td>
+                  <td>Paid</td>
+                  <td>2/02/2018</td>
+                  <td>5:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>NA</td>
+                </tr>
+                <tr>
+                	<td>100001</td>
+                  <td>Gullu Lal</td>
+                  <td>203001</td>
+                  <td>Paid Share</td>
+                  <td>1/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                	<td>100002</td>
+                  <td>Sumanata Roy</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                	<td>100003</td>
+                  <td>Sila Ghosh</td>
+                  <td>203003</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                
+                <tr>
+                	<td>100004</td>
+                  <td>Man Man</td>
+                  <td>203000</td>
+                  <td>Paid</td>
+                  <td>12/02/2018</td>
+                  <td>6:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Nag</td>
+                  <td>NA</td>
+                </tr>
+                <tr>
+                	<td>100005</td>
+                  <td>Sanjay Babu</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                	<td>100006</td>
+                  <td>Bibek Bhui</td>
+                  <td>205500</td>
+                  <td>paid</td>
+                  <td>12/02/2018</td>
+                  <td>4:00:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>Kabiguru</td>
+                  <td>Uday Pal</td>
+                  <td>NA</td>
+                </tr>
+              
+                <tr>
+                	<td>100007</td>
+                  <td>Milan Lo</td>
+                  <td>204000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>54 Feet</td>
+                  <td>Uday Pal</td>
+                  <td>80</td>
+                </tr>
+                <tr>
+                	<td>100008</td>
+                  <td>Abc Xyz</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                	<td>100009</td>
+                  <td>Abc Xyz</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                	<td>100010</td>
+                  <td>Bmr Xyz</td>
+                  <td>203000</td>
+                  <td>Paid</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>kabiguru</td>
+                  <td>Uday Paul</td>
+                  <td>70</td>
+                </tr>
+                <tr>
+                	<td>100011</td>
+                  <td>Abc Xyz</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                	<td>100012</td>
+                  <td>Abc Xyz</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+               
+                <tr>
+                	<td>100013</td>
+                  <td>Abc Xyz</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                	<td>100014</td>
+                  <td>Sunayana Suk</td>
+                  <td>205000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>6:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                 <tr>
+                	<td>100015</td>
+                  <td>Abc Xyz</td>
+                  <td>203000</td>
+                  <td>Free</td>
+                  <td>12/02/2018</td>
+                  <td>4:30:PM</td>
+                  <td>EIPL, Webel IT Park</td>
+                  <td>City Centre</td>
+                  <td>Uday Pal</td>
+                  <td>60</td>
+                </tr>
+                </tbody>
+              
+              </table>
+              <div class="col-md-2">
+                  <div class="form-group">
+                      <label></label>
+                      <td>
+                   <button class="btn btn-block btn-primary" onclick="printDiv()">Print</button>  </td> 
+                  </div>
+                </div>
+
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+     			
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+   <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+  <!-- /.content-wrapper -->
+
+
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2019 <a href="#">Ingram micro</a>.</strong> All rights reserved.
+  </footer>
+
+ 
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+ <script>
+    $(function(){
+            $("td").click(function(event){
+                    if($(this).children("input").length > 0)
+                            return false;
+                    var tdObj = $(this);
+                    var preText = tdObj.html();
+                    var inputObj = $("<input type='text' />");
+                    tdObj.html("");
+                    inputObj.width(tdObj.width())
+                            .height(tdObj.height())
+                            .css({border:"0px",fontSize:"14px"})
+                            .val(preText)
+                            .appendTo(tdObj)
+                            .trigger("focus")
+                            .trigger("select");
+                    inputObj.keyup(function(event){
+                            if(13 == event.which) { // press ENTER-key
+                                    var text = $(this).val();
+                                    tdObj.html(text);
+                            }
+                            else if(27 == event.which) {  // press ESC-key
+                                    tdObj.html(preText);
+                            }
+                  });
+                    inputObj.click(function(){
+                            return false;
+                    });
+            });
+    });
+                    </script>
+
+<!-- jQuery 3 -->
+<script src={%  static "bower_components/jquery/dist/jquery.min.js"%}></script>
+<!-- Bootstrap 3.3.7 -->
+<script src={%  static "bower_components/bootstrap/dist/js/bootstrap.min.js"%}></script>
+<!-- DataTables -->
+<script src={%  static "plugins/input-mask/jquery.inputmask.date.extensions.js"%}></script>
+<script src={%  static "plugins/input-mask/jquery.inputmask.extensions.js"%}></script>
+<!-- date-range-picker -->
+<script src={%  static "bower_components/moment/min/moment.min.js"%}></script>
+<script src={%  static "bower_components/bootstrap-daterangepicker/daterangepicker.js"%}></script>
+<!-- bootstrap datepicker -->
+<script src={%  static "bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" %}></script>
+<script src={%  static "bower_components/datatables.net/js/jquery.dataTables.min.js"%}></script>
+<script src={%  static "bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"%}></script>
+<!-- SlimScroll -->
+<script src={%  static "bower_components/jquery-slimscroll/jquery.slimscroll.min.js"%}></script>
+<!-- FastClick -->
+<script src={%  static "bower_components/fastclick/lib/fastclick.js"%}></script>
+<!-- AdminLTE App -->
+<script src={%  static "dist/js/adminlte.min.js"%}></script>
+<!-- AdminLTE for demo purposes -->
+<script src={%  static "dist/js/demo.js"%}></script>
+<script>
+    function myFunction() {
+      alert("Request has been sent");
+    }
+    $('#datepicker_startdate').datepicker({
+          autoclose: true
+        })
+        
+    </script>
+<script>
+    function myFunction() {
+      alert("Request has been sent");
+    }
+    $('#datepicker_enddate').datepicker({
+          autoclose: true
+        })
+
+    </script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+</body>
+</html>
